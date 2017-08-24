@@ -6,7 +6,7 @@ use Bresume\Me;
 $me = new Me();
 
 $me->about = [
-    'name' => 'Fengliangxian',
+    'name' => '冯良贤',
     'age' => intval((abs(time()-strtotime('1997-10-18')) / 86400) / 365),
     'country' => 'China',
     'city' => 'Wuhan',
@@ -58,15 +58,14 @@ $me->skill->ai = [];
 ?>
 <html>
 <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!--<script src="https://cdn.bootcss.com/prism/9000.0.1/prism.js"></script>-->
-    <!--<script src="https://cdn.bootcss.com/prism/9000.0.1/components/prism-php.js"></script>-->
-    <!--<link href="https://cdn.bootcss.com/prism/9000.0.1/themes/prism-twilight.css" rel="stylesheet">-->
+    <title>Bresume</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <pre class="class">
-<span class="identifier">Class</span> <span class="className"><?php echo $me->about['name']?></span> {
+<span class="identifier">Class</span> <span class="className"><?php echo $me->common->encode($me->about['name'], 'all')?></span> {
 <pre class="action">
 <span class="notation">// 个人</span>
 <span class="identifier">public</span> <span class="identifier">function</span> <span class="actionName">skill</span>() {
@@ -101,9 +100,6 @@ echo $me->about();
 }</pre>
 }
 </pre>
-<?php
-echo date('Y');
-echo date('Y');
-?>
+
 </body>
 </html>

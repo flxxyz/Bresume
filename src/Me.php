@@ -4,6 +4,7 @@ namespace Bresume;
 use Bresume\Skill;
 use Bresume\Job;
 use Bresume\Edu;
+use Bresume\Common;
 
 Class Me
 {
@@ -13,6 +14,7 @@ Class Me
         $this->skill = new Skill();
         $this->job = new Job();
         $this->edu = new Edu();
+        $this->common = new Common();
     }
 
     public function __set($name, $value) {
@@ -28,6 +30,7 @@ Class Me
         $tmpStr = '';
         foreach ($this->about as $name => $value) {
             $this->$name = $value;
+
             $isNum = is_numeric($value) ? 'number' : '';
             if(is_array($value)) {
                 $strValArr = "<span class='operator'>[</span><br /><pre>[%VALUE%]</pre><span class='operator ml'>]</span>";
