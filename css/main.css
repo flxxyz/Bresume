@@ -1,0 +1,49 @@
+body {
+    background: #F1F1F1;
+}
+pre, code {
+    margin: 0;
+    font-family: Consolas, monofur, Monaco, 'Andale Mono', monospace;
+    margin-left: 2em;
+    text-shadow: 0 -0.1em 0.2em #aaa;
+    white-space: pre;
+}
+.string {
+    color: #7aa11c;
+}
+.array {
+    margin-left: 1.6em;
+}
+.operator {
+    color: #000;
+}
+.punctuation {
+    color: #000;
+}
+.identifier, .number {
+    color: #FF005A;
+}
+.className {
+    color: #690CE8;
+}
+.actionName {
+    color: #B58331;
+}
+.varName {
+    color: #600;
+}
+.notation {
+    color: #808080;
+}
+.inner {
+    display: block;
+}
+.action {
+    display: block;
+}
+.varArr {
+    margin-left: 4em;
+}
+.ml {
+    margin-left: 2em;
+}

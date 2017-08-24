@@ -1,0 +1,17 @@
+{
+    "name": "fff/homepage",
+    "authors": [
+        {
+            "name": "flxxyz",
+            "email": "i@udwbu.com"
+        }
+    ],
+    "require": {
+      "php": ">=5.6"
+    },
+    "autoload": {
+      "psr-4": {
+        "Bresume\\": "src/"
+      }
+    }
+}
