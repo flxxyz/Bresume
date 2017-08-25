@@ -99,6 +99,28 @@ $me->job->nine = [];
 $me->job->ten = [];
 
 #### 教育经历 ####
+$me->edu->nursery = [];
+$me->edu->primary = [];
+$me->edu->primary = [];
+$me->edu->secondary = [];
+$me->edu->high = [];
+$me->edu->college = [];
+$me->edu->university = [];
+$me->edu->master = [];
+$me->edu->mba = [];
+$me->edu->doctor = [];
+$me->edu->postdoctor = [];
 
+#### 项目经历 ####
+$me->project->one = [];
+$me->project->two = [];
+$me->project->three = [];
+$me->project->four = [];
+$me->project->five = [];
+$me->project->six = [];
+$me->project->seven = [];
+$me->project->eight = [];
+$me->project->nine = [];
+$me->project->ten = [];
 
 require_once 'homepage.php';
