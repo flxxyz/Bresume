@@ -1,12 +1,19 @@
 body {
-    background: #F1F1F1;
+    background: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1.2em;
+    font-weight: lighter;
 }
 pre, code {
+    font-family: Consolas, monofur, Monaco;
     margin: 0;
-    font-family: Consolas, monofur, Monaco, 'Andale Mono', monospace;
     margin-left: 2em;
     text-shadow: 0 -0.1em 0.2em #aaa;
     white-space: pre;
+}
+h1, p {
+    font-size: 0px;
+    display: inline;
 }
 .string, a {
     color: #7aa11c;

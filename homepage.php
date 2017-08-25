@@ -4,10 +4,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Bresume</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://api.flxxyz.com/hitokoto/api?encode=js"></script>
+    <!--[if IE]>
+    <h1>此页面洪荒能量过高，如继续使用IE浏览器将会产生不可挽回的后果！！！</h1>
+    <small>请使用 Chrome 系浏览器浏览</small>
+    <![endif]-->
 </head>
 <body>
+<h1>梦逐彩虹海</h1>
+<p>不知你在哪，但我会去找你，穷极一生找寻你，等着我，一起去寻找彩虹海!</p>
 <pre class="class">
-<span class="identifier">Class</span> <span class="className"><?php echo $me->common->encode($me->about['name'], 'all') ?></span> {
+<span class="identifier">Class</span> <span class="className"><?php echo $me->common->encode($me->about['名字'], 'all') ?></span> {
 <pre class="action">
 <span class="notation">// 个人</span>
 <span class="identifier">public</span> <span class="identifier">function</span> <span class="actionName">skill</span>() {
@@ -29,21 +36,6 @@
 ?>}
 </pre>
 <pre class="action">
-<span class="notation">// 工作经历</span>
-<span class="identifier">public</span> <span class="identifier">function</span> <span class="actionName">job</span>() {
-<?php
-    echo $me->job->one();
-    echo $me->job->two();
-    echo $me->job->three();
-    echo $me->job->four();
-    echo $me->job->five();
-    echo $me->job->six();
-    echo $me->job->seven();
-    echo $me->job->eight();
-    echo $me->job->nine();
-    echo $me->job->ten();
-?>}</pre>
-<pre class="action">
 <span class="notation">// 项目经验</span>
 <span class="identifier">public</span> <span class="identifier">function</span> <span class="actionName">edu</span>() {
 <?php
@@ -59,6 +51,21 @@
     echo $me->project->ten();
 ?>}</pre>
 <pre class="action">
+<span class="notation">// 工作经历</span>
+<span class="identifier">public</span> <span class="identifier">function</span> <span class="actionName">job</span>() {
+    <?php
+    echo $me->job->one();
+    echo $me->job->two();
+    echo $me->job->three();
+    echo $me->job->four();
+    echo $me->job->five();
+    echo $me->job->six();
+    echo $me->job->seven();
+    echo $me->job->eight();
+    echo $me->job->nine();
+    echo $me->job->ten();
+?>}</pre>
+<pre class="action">
 <span class="notation">// 教育经历</span>
 <span class="identifier">public</span> <span class="identifier">function</span> <span class="actionName">edu</span>() {
 <?php
@@ -66,6 +73,5 @@
 ?>}</pre>
 }
 </pre>
-
 </body>
 </html>

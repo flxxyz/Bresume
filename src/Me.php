@@ -44,13 +44,13 @@ Class Me
                     }else {
                         $key = ucfirst($key);
                         $val = $this->link($val);
-                        $tmpStrValArr .= "<span class='string array'>\"$key\" => \"$val\"<span class='punctuation'>,</span><br></span>";
+                        $tmpStrValArr .= "<span class='string array'>\"$key\" <span class='punctuation'>=></span> \"$val\"<span class='punctuation'>,</span><br></span>";
                     }
                 }
                 $strValArr = str_replace('[%VALUE%]', "$tmpStrValArr", $strValArr);
                 $value = $strValArr;
             }else {
-                $value = is_numeric($value) ?  $value : $this->link($value, 'mail');
+                $value = is_numeric($value) ?  $value : '"'.$this->link($value, 'mail').'"';
             }
 
             $str = "    <spen class='string $isNum'><span class='varName'>$[%NAME%]</span> <span class='operator'>=</span> [%VALUE%]<span class='operator'>;</span></spen><br />";
