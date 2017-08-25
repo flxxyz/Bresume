@@ -82,4 +82,12 @@ Class Common {
         }
     }
 
+    /**
+     * 处理年龄
+     * @param string $name
+     * @return int
+     */
+    public function name($name = '1970-01-01') {
+        return intval((abs(time()-strtotime($name)) / 86400) / 365);
+    }
 }

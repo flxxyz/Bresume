@@ -20,7 +20,7 @@ pre, code {
 .punctuation {
     color: #000;
 }
-.identifier, .number {
+.identifier, .number, .strong {
     color: #FF005A;
 }
 .className {

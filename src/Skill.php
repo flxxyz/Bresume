@@ -101,19 +101,49 @@ Class Skill
         return $this->handle('framework', '使用的框架');
     }
 
+    /**
+     * 处理“数组”生成
+     * @param $name
+     * @param $description
+     *
+     * @return mixed|string
+     */
     protected function handle($name, $description) {
         if(!count($this->$name)) {
             return '';
         }
-        $str = "<span class='string array'>\"[%VAR_NAME%]\" <span class='operator'>=></span> \"[%VALUE%]\"<span class='punctuation'>,</span><br></span>";
+
+        $strNoKey = "<span class='string array'>\"[%VAR_NAME%]\" <span class='operator'>=></span> \"<span class='[%STRONG%]'>[%VALUE%]</span>\"<span class='punctuation'>,</span><br></span>";  // 没有键名
+        $strKey = "<span class='string array'>\"<span class='[%STRONG%]'>[%VALUE%]</span>\"<span class='punctuation'>,</span><br></span>";  // 有键名
 
         $tmpStr = '';
         foreach ($this->$name as $varName => $value) {
-            $tmpStr .= str_replace('[%VALUE%]', $this->$name[$varName], str_replace('[%VAR_NAME%]', ucfirst($varName), $str));
+            if(is_numeric($varName)) {
+                $tmp = $this->numeric($value, $strKey);
+                $tmpStr .= str_replace('[%VALUE%]', ucfirst($value), $tmp);
+            }else {
+                $tmp = $this->numeric($value, $strNoKey);
+                $tmpStr .= str_replace('[%VALUE%]', $this->$name[$varName], str_replace('[%VAR_NAME%]', ucfirst($varName), $tmp));
+            }
+
+
+
             //$tmpArr[ucfirst($varName)] = $this->web[$varName];
         }
         $str = str_replace('[%key%]', $tmpStr, self::Arr);
         $str = str_replace('[%VAR_TYPE%]', "$$name", $str);
-        return $str = str_replace('[%DESCRIPTION%]', $description, $str);;
+        return str_replace('[%DESCRIPTION%]', $description, $str);
+    }
+
+    protected function numeric($value = '', $str = '') {
+        $num = str_replace('%', '', $value);
+        if(is_numeric($num)) {
+            // 能力值大于等55的强调
+            if($num >= 55) {
+                return str_replace('[%STRONG%]', 'strong', $str);
+            }
+        }
+
+        return str_replace('[%STRONG%]', '', $str);
     }
 }
