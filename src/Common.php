@@ -90,4 +90,25 @@ Class Common {
     public function name($name = '1970-01-01') {
         return intval((abs(time()-strtotime($name)) / 86400) / 365);
     }
+
+    public static function link($value = '', $type = 'url') {
+        switch ($type) {
+            case 'mail':
+                if (preg_match("/[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+/", $value, $matches)) {
+                    //var_dump($matches);
+                    return str_replace('[%HREF%]', $matches[0], "<a href='mailto:[%HREF%]'>[%HREF%]</a>");
+                }
+                break;
+            case 'url':
+            default:
+                if (preg_match("/[a-zA-z]+:\/\/[^\s]*/", $value, $matches)) {
+                    //var_dump($matches[0]);
+                    return str_replace('[%HREF%]', $matches[0], "<a href='[%HREF%]' target='_blank'>[%HREF%]</a>");
+                }
+                break;
+        }
+
+
+        return $value;
+    }
 }

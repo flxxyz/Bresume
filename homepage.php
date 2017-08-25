@@ -1,8 +1,12 @@
+<!doctype html>
 <html lang="zh">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Bresume</title>
+    <meta name="description" content="不知你在哪，但我会去找你，穷极一生找寻你，等着我，一起去寻找彩虹海!" />
+    <meta name="keywords" content="冯小贤,彩虹海是我的,梦逐彩虹海,彩虹海,小贤,简历" />
     <link rel="stylesheet" href="css/main.css">
     <script src="https://api.flxxyz.com/hitokoto/api?encode=js"></script>
     <!--[if IE]>
@@ -37,7 +41,7 @@
 </pre>
 <pre class="action">
 <span class="notation">// 项目经验</span>
-<span class="identifier">public</span> <span class="identifier">function</span> <span class="actionName">edu</span>() {
+<span class="identifier">public</span> <span class="identifier">function</span> <span class="actionName">project</span>() {
 <?php
     echo $me->project->one();
     echo $me->project->two();

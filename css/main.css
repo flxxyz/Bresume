@@ -1,7 +1,7 @@
 body {
     background: #fff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 1.2em;
+    font-size: 1.6em;
     font-weight: lighter;
 }
 pre, code {
@@ -10,6 +10,9 @@ pre, code {
     margin-left: 2em;
     text-shadow: 0 -0.1em 0.2em #aaa;
     white-space: pre;
+}
+.class {
+    margin-left: 1em;
 }
 h1, p {
     font-size: 0px;
@@ -56,4 +59,9 @@ a:hover {
 }
 .ml {
     margin-left: 2em;
+}
+@media screen and (max-width: 960px){
+    body{
+        font-size: 1em;
+    }
 }

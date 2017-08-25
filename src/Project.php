@@ -1,6 +1,8 @@
 <?php
 namespace Bresume;
 
+use Bresume\Common;
+
 class Project
 {
     /**
@@ -92,6 +94,7 @@ class Project
         $tmpStr = '';
         foreach ($this->$name as $varName => $varValue) {
             $str = str_replace('[%VARNAME%]', $varName, "<span class='string operator'><span class='string'>\"[%VARNAME%]\"</span> => <span class='string'>\"[%VARVALUE%]\"</span>,</span><br />");
+            $varValue = \Bresume\Common::link($varValue);
             $str = str_replace('[%VARVALUE%]', $varValue, $str);
             $tmpStr .= $str;
         }

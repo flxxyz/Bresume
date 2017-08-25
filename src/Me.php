@@ -39,18 +39,18 @@ Class Me
                 $tmpStrValArr = '';
                 foreach ($value as $key => $val) {
                     if(is_numeric($key)) {
-                        $val = $this->link($val);
+                        $val = $this->common->link($val);
                         $tmpStrValArr .= "<span class='string array'>\"$val\"<span class='punctuation'>,</span><br></span>";
                     }else {
                         $key = ucfirst($key);
-                        $val = $this->link($val);
+                        $val = $this->common->link($val);
                         $tmpStrValArr .= "<span class='string array'>\"$key\" <span class='punctuation'>=></span> \"$val\"<span class='punctuation'>,</span><br></span>";
                     }
                 }
                 $strValArr = str_replace('[%VALUE%]', "$tmpStrValArr", $strValArr);
                 $value = $strValArr;
             }else {
-                $value = is_numeric($value) ?  $value : '"'.$this->link($value, 'mail').'"';
+                $value = is_numeric($value) ?  $value : '"'.$this->common->link($value, 'mail').'"';
             }
 
             $str = "    <spen class='string $isNum'><span class='varName'>$[%NAME%]</span> <span class='operator'>=</span> [%VALUE%]<span class='operator'>;</span></spen><br />";
@@ -59,27 +59,5 @@ Class Me
 
         return $tmpStr;
     }
-
-    protected function link($value = '', $type = 'url') {
-        switch ($type) {
-            case 'mail':
-                if (preg_match("/[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+/", $value, $matches)) {
-                    //var_dump($matches);
-                    return str_replace('[%HREF%]', $matches[0], "<a href='mailto:[%HREF%]'>[%HREF%]</a>");
-                }
-                break;
-            case 'url':
-            default:
-                if (preg_match("/[a-zA-z]+:\/\/[^\s]*/", $value, $matches)) {
-                    //var_dump($matches[0]);
-                    return str_replace('[%HREF%]', $matches[0], "<a href='[%HREF%]' target='_blank'>[%HREF%]</a>");
-                }
-                break;
-        }
-
-
-        return $value;
-    }
-
 
 }
