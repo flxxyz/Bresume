@@ -10,19 +10,24 @@ $me->about = [
     'age' => $me->common->name('1997-10-18'),  // 出身日期 1997-10-18
     'country' => 'China',
     'city' => 'Wuhan',
+    'phone' => 13000000000,
+    'qq' => 1547755744,
     'email' => 'i@mdzz.name',
+    'contact' => [
+        'github' => 'https://github.com/flxxyz',
+        'steam' => 'http://steamcommunity.com/id/flxxyz/',
+        'google plus' => 'https://plus.google.com/101182464222136059417',
+        'twitter' => 'https://twitter.com/flxxyz',
+        'bilibili' => 'http://space.bilibili.com/2953067/',
+        'weibo' => 'http://weibo.com/flxxy',
+    ],
     'site' => [
-        'flxxyz.com',
-        'udwbu.com',
-        '64vw.com',
-        'lajiqq.com',
-        'qqshit.com',
         'mdzz.name',
         'toyou.ren',
         'jutasky.club',
         '19971018.date',
         '...'
-    ]
+    ],
 ];
 $me->skill->web = [
     'html' => '80%',

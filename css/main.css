@@ -8,8 +8,11 @@ pre, code {
     text-shadow: 0 -0.1em 0.2em #aaa;
     white-space: pre;
 }
-.string {
+.string, a {
     color: #7aa11c;
+}
+a:hover {
+    color: #00f;
 }
 .array {
     margin-left: 1.6em;

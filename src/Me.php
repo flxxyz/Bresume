@@ -35,8 +35,17 @@ Class Me
             if(is_array($value)) {
                 $strValArr = "<span class='operator'>[</span><br /><pre>[%VALUE%]</pre><span class='operator ml'>]</span>";
                 $tmpStrValArr = '';
-                foreach ($value as $val) {
-                    $tmpStrValArr .= "<span class='string array'>\"$val\"<span class='punctuation'>,</span><br></span>";
+                foreach ($value as $key => $val) {
+                    if(is_numeric($key)) {
+                        $tmpStrValArr .= "<span class='string array'>\"$val\"<span class='punctuation'>,</span><br></span>";
+                    }else {
+                        $key = ucfirst($key);
+                        if (preg_match("/[a-zA-z]+:\/\/[^\s]*/", $val, $matches)) {
+                            //var_dump($matches[0]);
+                            $val = str_replace('[%HREF%]', $matches[0], "<a href='[%HREF%]' target='_blank'>[%HREF%]</a>");
+                        }
+                        $tmpStrValArr .= "<span class='string array'>\"$key\" => \"$val\"<span class='punctuation'>,</span><br></span>";
+                    }
                 }
                 $strValArr = str_replace('[%VALUE%]', "$tmpStrValArr", $strValArr);
                 $value = $strValArr;
