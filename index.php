@@ -5,6 +5,7 @@ use Bresume\Me;
 
 $me = new Me();
 
+#### 个人信息 ####
 $me->about = [
     'name' => '冯良贤',
     'age' => $me->common->name('1997-10-18'),  // 出身日期 1997-10-18
@@ -13,7 +14,7 @@ $me->about = [
     'phone' => 13000000000,
     'qq' => 1547755744,
     'email' => 'i@mdzz.name',
-    'contact' => [
+    'home' => [
         'github' => 'https://github.com/flxxyz',
         'steam' => 'http://steamcommunity.com/id/flxxyz/',
         'google plus' => 'https://plus.google.com/101182464222136059417',
@@ -29,6 +30,8 @@ $me->about = [
         '...'
     ],
 ];
+
+#### 技能树 ####
 $me->skill->web = [
     'html' => '80%',
     'css' => '75%',
@@ -48,9 +51,20 @@ $me->skill->dev = [
     'redis' => '65%',
     'mongo' => '45%',
     'python' => '20%',
+    'seo' => '55%',
+    '...',
 ];
 $me->skill->ops = [];
-$me->skill->devOps = [];
+$me->skill->devOps = [
+    'linux' => '10%',
+    'nginx' => '10%',
+    'mysql' => '20%',
+    'php' => '75%',
+    'redis' => '55%',
+    'mongo' => '30%',
+    'python' => '15%',
+    '...'
+];
 $me->skill->framework = [
     'laravel',
     'codeigniter',
@@ -58,9 +72,33 @@ $me->skill->framework = [
     'swoole',
     'express',
 ];
-$me->skill->mobile = [];
+$me->skill->mobile = [
+    'HTML5' => '55%',
+    'CSS3' => '70%',
+    '...',
+];
 $me->skill->embedded = [];
 $me->skill->game = [];
 $me->skill->ai = [];
+
+#### 工作经历 ####
+$me->job->one = [
+    'date' => '2017-6 ~ 2017.9',
+    'company' => '武汉星汉娱乐有限公司',
+    'position' => '后端开发',
+    'content' => '负责后台的API开发与前端页面的交互',
+];
+$me->job->two = [];
+$me->job->three = [];
+$me->job->four = [];
+$me->job->five = [];
+$me->job->six = [];
+$me->job->seven = [];
+$me->job->eight = [];
+$me->job->nine = [];
+$me->job->ten = [];
+
+#### 教育经历 ####
+
 
 require_once 'homepage.php';

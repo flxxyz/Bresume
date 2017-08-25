@@ -4,6 +4,7 @@ namespace Bresume;
 use Bresume\Skill;
 use Bresume\Job;
 use Bresume\Edu;
+use Bresume\Project;
 use Bresume\Common;
 
 Class Me
@@ -14,6 +15,7 @@ Class Me
         $this->skill = new Skill();
         $this->job = new Job();
         $this->edu = new Edu();
+        $this->project = new Project();
         $this->common = new Common();
     }
 

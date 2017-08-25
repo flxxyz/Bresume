@@ -8,8 +8,7 @@ Class Job
      * @return mixed
      */
     public function one() {
-
-        return '';
+        return $this->handle(__FUNCTION__, '第一');
     }
 
     /**
@@ -65,4 +64,15 @@ Class Job
      * @return mixed
      */
     public function ten() {}
+
+    protected function handle($name, $description) {
+        $aaa = "<pre><span class='notation inner'>// $description</span><span class='varName'>$$name</span> = [<pre>[%KEY%]</pre>];</pre>";
+        $tmpStr = '';
+        foreach ($this->$name as $varName => $varValue) {
+            $str = str_replace('[%VARNAME%]', $varName, "<span class='string operator'><span class='string'>\"[%VARNAME%]\"</span> => <span class='string'>\"[%VARVALUE%]\"</span>,</span><br />");
+            $str = str_replace('[%VARVALUE%]', $varValue, $str);
+            $tmpStr .= $str;
+        }
+        return str_replace('[%KEY%]', $tmpStr, $aaa);
+    }
 }

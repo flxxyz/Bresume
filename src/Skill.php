@@ -34,7 +34,7 @@ Class Skill
      * @return mixed
      */
     public function mobile() {
-        return $this->handle('mobile', '移动开发');
+        return $this->handle(__FUNCTION__, '移动开发');
     }
 
     /**
@@ -42,7 +42,7 @@ Class Skill
      * @return mixed
      */
     public function embedded() {
-        return $this->handle('embedded', '嵌入式开发');
+        return $this->handle(__FUNCTION__, '嵌入式开发');
     }
 
     /**
@@ -50,7 +50,7 @@ Class Skill
      * @return mixed
      */
     public function game() {
-        return $this->handle('game', '游戏开发');
+        return $this->handle(__FUNCTION__, '游戏开发');
     }
 
     /**
@@ -58,7 +58,7 @@ Class Skill
      * @return mixed
      */
     public function ai() {
-        return $this->handle('ai', '人工智能');
+        return $this->handle(__FUNCTION__, '人工智能');
     }
 
     /**
@@ -66,7 +66,7 @@ Class Skill
      * @return mixed
      */
     public function web() {
-        return $this->handle('web', 'Web开发');
+        return $this->handle(__FUNCTION__, 'Web开发');
     }
 
     /**
@@ -74,7 +74,7 @@ Class Skill
      * @return mixed
      */
     public function dev() {
-        return $this->handle('dev', '后端');
+        return $this->handle(__FUNCTION__, '后端');
     }
 
     /**
@@ -82,7 +82,7 @@ Class Skill
      * @return mixed
      */
     public function ops() {
-        return $this->handle('ops', '运维');
+        return $this->handle(__FUNCTION__, '运维');
     }
 
     /**
@@ -90,7 +90,7 @@ Class Skill
      * @return mixed
      */
     public function devOps() {
-        return $this->handle('devOps', '开发运维');
+        return $this->handle(__FUNCTION__, '开发运维');
     }
 
     /**
@@ -98,7 +98,7 @@ Class Skill
      * @return mixed
      */
     public function framework() {
-        return $this->handle('framework', '使用的框架');
+        return $this->handle(__FUNCTION__, '使用的框架');
     }
 
     /**
