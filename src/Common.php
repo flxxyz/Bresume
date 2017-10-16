@@ -88,7 +88,15 @@ Class Common {
      * @return int
      */
     public function name($name = '1970-01-01') {
-        return intval((abs(time()-strtotime($name)) / 86400) / 365);
+        list($year, $month, $day) = explode('-', $name);
+        $diff['y'] = date('Y') - $year;
+        $diff['m'] = date('m') - $month;
+        $diff['d'] = date('d') - $day;
+
+        if($diff['d'] < 0 || $diff['m'] < 0)
+            $diff['y']--;
+
+        return $diff['y'];
     }
 
     public static function link($value = '', $type = 'url') {
