@@ -21,7 +21,7 @@
 <span class="identifier">Class</span> <span class="className"><?php echo $me->common->encode($me->about['名字'], 'all') ?></span> {
 <pre class="action">
 <span class="notation">// 个人</span>
-<span class="identifier">public</span> <span class="identifier">function</span> <span class="actionName">skill</span>() {
+<span class="identifier">public</span> <span class="identifier">function</span> <span class="actionName">about</span>() {
 <?php echo $me->about(); ?>
 }</pre>
 <pre class="action">
